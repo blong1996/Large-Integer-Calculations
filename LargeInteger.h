@@ -1,5 +1,6 @@
 #include <cstdint>
 #include "iostream"
+
 using namespace std;
 
 
@@ -10,13 +11,13 @@ using namespace std;
  * Created on January 31, 2018
  */
 
-class LargeInteger
-{
+class LargeInteger {
 
 private:
     string num;
+
     string Add(string longer, string shorter, int carry); // Recursive Add function
-    LargeInteger MultiplyOne(LargeInteger product,string A,string B); // Recursive Multiplication function part one
+    LargeInteger MultiplyOne(LargeInteger product, string A, string B); // Recursive Multiplication function part one
     string MultiplyTwo(int digit, string number, int carry); // Recursive Multiplication function part two
 
 public:

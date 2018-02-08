@@ -6,6 +6,7 @@
  */
 
 #include "LargeInteger.h"
+
 using namespace std;
 
 /**
@@ -124,8 +125,7 @@ string LargeInteger::MultiplyTwo(int digit, string number, int carry) {
         if (product >= 10) {
             carry = product / 10;
             product = product % 10;
-        }
-        else carry = 0;
+        } else carry = 0;
         return MultiplyTwo(digit, number.erase(number.size() - 1), carry) +
                to_string(product);
     }
@@ -143,8 +143,7 @@ LargeInteger LargeInteger::Power(int n) {
     if (n == 0) {
         c.num = "1";
 
-    }
-    else  if (n > 1){
+    } else if (n > 1) {
         for (int y = 1; y < n; y++) {
             c = b.Multiply(c);
         }
