@@ -78,7 +78,7 @@ string LargeInteger::Add(string longer, string shorter, int carry) {
  * @return product
  */
 LargeInteger LargeInteger::Multiply(LargeInteger B) {
-    LargeInteger product = MultiplyOne(product, num, B.num);
+    LargeInteger product = MultiplyOne(product, toString(), B.toString());
 
     if (product.num[0] == '0')
         product.num = "0";
@@ -132,19 +132,32 @@ string LargeInteger::MultiplyTwo(int digit, string number, int carry) {
 }
 
 /**
+ * Multiply LargeInteger by itself n times
  *
- *  Display LargeInteger value with and witout commas
- *
+ * @param n
+ * @return product of arithmetic
  */
-void LargeInteger::Output() {
-    string temp = num;
-    cout << "Without comas:" << endl;
-    cout << num << endl;
-    for (auto i = static_cast<int>(temp.size() - 3); i > 0; i -= 3) {
-        temp.insert(temp.begin() + i, ',');
-    }
-    cout << "With comas:" << endl;
-    cout << temp << endl;
+LargeInteger LargeInteger::Power(int n) {
+    LargeInteger b(toString());
+    LargeInteger c(toString());
+    if (n == 0) {
+        c.num = "1";
 
+    }
+    else  if (n > 1){
+        for (int y = 1; y < n; y++) {
+            c = b.Multiply(c);
+        }
+    }
+    return c;
+}
+
+/**
+ * return string value of LargeInteger
+ *
+ * @return num
+ */
+string LargeInteger::toString() const {
+    return num;
 }
 

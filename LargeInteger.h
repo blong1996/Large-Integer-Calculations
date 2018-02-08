@@ -25,6 +25,7 @@ public:
     LargeInteger(string y); // Constructor
     LargeInteger Add(LargeInteger B); // Add Driver function
     LargeInteger Multiply(LargeInteger B); // Multiply Driver function
-    void Output(); // Output function to print Large Int
+    LargeInteger Power(int n); // return LargeInteger to the n power
+    string toString() const; // Return LargeInteger as string
 
 };
